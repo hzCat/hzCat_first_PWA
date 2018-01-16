@@ -1,0 +1,58 @@
+.modal-con {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.26rem;
+}
+.modal-con .modal {
+  position: relative;
+  width: 5.6rem;
+  min-height: 6rem;
+  background: #fff;
+  border-radius: 0.12rem;
+}
+.modal-con .modal .header {
+  font-size: 0.36rem;
+  text-align: center;
+  margin-top: 0.4rem;
+  font-weight: bold;
+}
+.modal-con .modal .name {
+  font-size: 0.32rem;
+  text-align: left;
+  padding: 0.16rem 0.4rem;
+}
+.modal-con .modal .question {
+  font-size: 0.3rem;
+  text-align: center;
+  margin-top: 0.4rem;
+}
+.modal-con .modal .answer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.modal-con .modal .answer .select {
+  width: 100%;
+  font-size: 0.28rem;
+  text-align: center;
+  margin-top: 0.36rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.modal-con .modal .answer .select span:first-child {
+  margin-left: 1rem;
+}
+.modal-con .modal .answer .select span:last-child {
+  margin-left: 0.24rem;
+}
