@@ -16,6 +16,7 @@
   min-height: 6rem;
   background: #fff;
   border-radius: 0.12rem;
+  padding-bottom: 0.6rem;
 }
 .modal-con .modal .header {
   font-size: 0.36rem;
