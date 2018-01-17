@@ -17,6 +17,7 @@
 <script>
 import "./style.css";
 export default {
+  props:["index","question"],
   data() {
     return {
       Qindex: 1,
