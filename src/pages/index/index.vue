@@ -1,10 +1,18 @@
 <template>
-  <div>
-    <button @click="begin()">开始</button>
+  <div class="container">
+    <div class="title">期末考试</div>
+    <div class="nowScore">现在得分:{{nowScore}}</div>
+    <div class="score">满分100分,一道题{{score}}分,自行四舍五入</div>
+    <!-- 结束 -->
+    <div v-if="index>QSlength">结束</div>
+    <div class="btn-group">
+      <button @click="begin()" v-if="index==0" class="begin-btn">开始</button>
+    </div>
     <QSmodal :open="qsOpen" :question="nowQs" :index="nowIndex" @answer="getAnswer"></QSmodal>
     <RESmodal :open="resOpen" :answer="result" @next="nextQS"></RESmodal>
   </div>
 </template>
+
 <script>
 import "./style.css";
 import QSmodal from "../../components/QSmodal/index.vue";
@@ -17,6 +25,7 @@ export default {
   data() {
     return {
       Qs: [
+        // 问题1
         {
           question: "1111你知道了什么不知道",
           selects: [
@@ -25,6 +34,7 @@ export default {
             { content: "hello", isRight: false }
           ]
         },
+        // 问题2
         {
           question: "22222你知道么都不知道",
           selects: [
@@ -34,6 +44,7 @@ export default {
             { content: "hello", isRight: false }
           ]
         },
+        // 问题3
         {
           question: "33333你知么都不知道",
           selects: [
@@ -58,14 +69,20 @@ export default {
       // 传出结果
       result: null,
       // 问题长度
-      QSlength: null
+      QSlength: null,
+      // 分数
+      score: 0,
+      // 现在分数
+      nowScore: 0
     };
   },
   mounted() {
     let arr = this.Qs;
     let length = arr.length;
+    let score = (100 / length).toFixed(3);
+    this.score = score;
     this.QSlength = length;
-    console.log("问题长度",length);
+    console.log("问题长度", length);
   },
 
   methods: {
@@ -98,9 +115,7 @@ export default {
         }, 500);
       }
     },
-    over(){
-      
-    }
+    over() {}
   }
 };
 </script>

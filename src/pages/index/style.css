@@ -1,0 +1,29 @@
+.container {
+  padding: 0.54rem 0.4rem;
+  font-size: 0.3rem;
+  position: relative;
+}
+.container .title {
+  text-align: center;
+  font-size: 0.6rem;
+}
+.container .score,
+.container .nowScore {
+  line-height: 0.6rem;
+  text-align: center;
+}
+.container .nowScore {
+  margin-top: 0.4rem;
+}
+.container .btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.container button {
+  width: 3.76rem;
+  height: 0.88rem;
+  border-radius: 0.1rem;
+  background: #fff;
+  border: 0.01rem solid #dbdbdb;
+}
