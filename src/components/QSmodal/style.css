@@ -1,7 +1,7 @@
 .QS-con {
   position: fixed;
   top: 0;
-  height: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -26,15 +26,19 @@
   margin-top: 0.4rem;
   font-weight: bold;
 }
-.QS-con .modal .name {
+.QS-con .modal .name,
+.QS-con .modal .QS-stu {
   font-size: 0.32rem;
   text-align: left;
+  line-height: 0.5rem;
   padding: 0.16rem 0.4rem;
 }
 .QS-con .modal .question {
+  line-height: 0.5rem;
   font-size: 0.3rem;
   text-align: center;
-  margin-top: 0.4rem;
+  width: 80%;
+  margin: 0 auto;
 }
 .QS-con .modal .answer {
   width: 100%;
@@ -42,13 +46,13 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .QS-con .modal .answer .select {
+  line-height: 0.7rem;
   width: 100%;
   font-size: 0.28rem;
   text-align: center;
-  margin-top: 0.36rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -58,7 +62,4 @@
 }
 .QS-con .modal .answer .select span:last-child {
   margin-left: 0.24rem;
-}
-.openQS {
-  height: 100vh;
 }

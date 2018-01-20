@@ -1,8 +1,14 @@
 <template>
-  <div class="res-con" :class="{openres:open}">
+  <div class="res-con" v-show="open">
     <div class="modal">
-      <div class="words true" v-if="answer">对了对了</div>
-      <div class="words false" v-if="!answer">错了错了</div>
+
+      <transition enter-active-class="animated rubberBand">
+        <div class="words true" v-show="thisAnswer==true">对了对了</div>
+      </transition>
+
+      <transition enter-active-class="animated wobble">
+        <div class="words false" v-show="thisAnswer==false">错了错了</div>
+      </transition>
       <button @click="nextQS()" class="next">下一题</button>
     </div>
   </div>
@@ -13,16 +19,31 @@ import "./style.css";
 export default {
   props: ["open", "answer"],
   data() {
-    return {};
+    return {
+      thisAnswer:null
+    };
   },
   // 有更新时
-  updated(){
-
+  updated() {},
+  watch: {
+    answer() {
+      if (this.answer==true) {
+        setTimeout(() => {
+          this.thisAnswer=true
+        }, 100);
+      }else if(this.answer==false){
+        setTimeout(() => {
+          this.thisAnswer=false
+        }, 100);
+      }
+    }
   },
   methods: {
     nextQS() {
-      // this.open = false;
-      this.$emit("next", { next: true });
+      this.thisAnswer = null;
+      this.$emit("next", {
+        next: true
+      });
     }
   }
 };

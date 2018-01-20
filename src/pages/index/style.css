@@ -6,19 +6,48 @@
 .container .title {
   text-align: center;
   font-size: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 .container .score,
 .container .nowScore {
-  line-height: 0.6rem;
+  line-height: 0.8rem;
   text-align: center;
 }
 .container .nowScore {
   margin-top: 0.4rem;
 }
+.container .nowScore .score-red {
+  color: #e4293c;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
 .container .btn-group {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+}
+.container .end {
+  text-align: center;
+  margin-top: 1.6rem;
+  font-size: 0.8rem;
+}
+.container .stu,
+.container .teacher {
+  line-height: 0.8rem;
+  text-align: center;
+  margin-top: 0.24rem;
+}
+.container .stu .stu-name,
+.container .teacher .stu-name {
+  border-radius: 0.07rem;
+  border: 0.01rem solid #999;
+  text-align: center;
+  line-height: 0.8rem;
+}
+.container .stu .err-name,
+.container .teacher .err-name {
+  border: 0.01rem solid #e4393c;
+  background: rgba(255, 0, 0, 0.2);
 }
 .container button {
   width: 3.76rem;

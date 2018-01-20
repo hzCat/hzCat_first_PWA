@@ -4,7 +4,6 @@
   left: 0;
   right: 0;
   top: 0;
-  transform: scale(0);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -27,9 +26,9 @@
 .res-con .modal .words {
   font-size: 1rem;
 }
+.res-con .modal .false {
+  color: #e4393c;
+}
 .res-con .modal .next {
   margin-top: 0.56rem;
-}
-.openres {
-  transform: scale(1);
 }
