@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-con" v-if="open">
+  <div class="QS-con" :class="{openQS:open}">
       <div class="modal">
           <div class="header">第 {{index+1}} 题</div>
           <div class="name">{{Qname||'提问人'}} :</div>
@@ -37,6 +37,7 @@ export default {
     },
     isRight(index) {
       let arr = this.question.selects;
+      console.log(arr);
       let obj = arr[index];
       let answerRight = obj.isRight;
       console.log(answerRight);

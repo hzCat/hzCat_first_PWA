@@ -2,14 +2,17 @@
   <div>
     <button @click="begin()">开始</button>
     <QSmodal :open="qsOpen" :question="nowQs" :index="nowIndex" @answer="getAnswer"></QSmodal>
+    <RESmodal :open="resOpen" :answer="result" @next="nextQS"></RESmodal>
   </div>
 </template>
 <script>
 import "./style.css";
 import QSmodal from "../../components/QSmodal/index.vue";
+import RESmodal from "../../components/resultModal/index";
 export default {
   components: {
-    QSmodal
+    QSmodal,
+    RESmodal
   },
   data() {
     return {
@@ -42,14 +45,29 @@ export default {
           ]
         }
       ],
+      // 当前页面计数
       index: 0,
+      // 传出计数
       nowIndex: 0,
+      // 传出问题
       nowQs: [],
+      // 是否打开 qsmodal
       qsOpen: false,
+      // 是否打开 结果modal
       resOpen: false,
-      result: null
+      // 传出结果
+      result: null,
+      // 问题长度
+      QSlength: null
     };
   },
+  mounted() {
+    let arr = this.Qs;
+    let length = arr.length;
+    this.QSlength = length;
+    console.log("问题长度",length);
+  },
+
   methods: {
     begin() {
       this.result = null;
@@ -62,10 +80,26 @@ export default {
       this.index = idx;
     },
     getAnswer(e) {
-      console.log(e);
-      let answer = e.isTure;
-      this.result = answer;
+      let answer = e.isTrue;
+      console.log("收到结果", e);
+      console.log("收到结果", answer);
       this.qsOpen = false;
+      setTimeout(() => {
+        this.result = answer;
+        this.resOpen = true;
+      }, 500);
+    },
+    nextQS(e) {
+      let isNext = e.next;
+      if (isNext) {
+        this.resOpen = false;
+        setTimeout(() => {
+          this.begin();
+        }, 500);
+      }
+    },
+    over(){
+      
     }
   }
 };

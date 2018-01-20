@@ -1,7 +1,7 @@
-.modal-con {
+.QS-con {
   position: fixed;
   top: 0;
-  bottom: 0;
+  height: 0;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -9,8 +9,10 @@
   justify-content: center;
   align-items: center;
   font-size: 0.26rem;
+  transition: all 0.5s linear;
+  overflow: hidden;
 }
-.modal-con .modal {
+.QS-con .modal {
   position: relative;
   width: 5.6rem;
   min-height: 6rem;
@@ -18,23 +20,23 @@
   border-radius: 0.12rem;
   padding-bottom: 0.6rem;
 }
-.modal-con .modal .header {
+.QS-con .modal .header {
   font-size: 0.36rem;
   text-align: center;
   margin-top: 0.4rem;
   font-weight: bold;
 }
-.modal-con .modal .name {
+.QS-con .modal .name {
   font-size: 0.32rem;
   text-align: left;
   padding: 0.16rem 0.4rem;
 }
-.modal-con .modal .question {
+.QS-con .modal .question {
   font-size: 0.3rem;
   text-align: center;
   margin-top: 0.4rem;
 }
-.modal-con .modal .answer {
+.QS-con .modal .answer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -42,7 +44,7 @@
   flex-wrap: wrap;
   margin-top: 1rem;
 }
-.modal-con .modal .answer .select {
+.QS-con .modal .answer .select {
   width: 100%;
   font-size: 0.28rem;
   text-align: center;
@@ -51,9 +53,12 @@
   align-items: center;
   justify-content: flex-start;
 }
-.modal-con .modal .answer .select span:first-child {
+.QS-con .modal .answer .select span:first-child {
   margin-left: 1rem;
 }
-.modal-con .modal .answer .select span:last-child {
+.QS-con .modal .answer .select span:last-child {
   margin-left: 0.24rem;
+}
+.openQS {
+  height: 100vh;
 }
